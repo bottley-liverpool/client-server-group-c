@@ -1,4 +1,4 @@
-cleint-server-group-c/
+client-server-group-c/
 │
 ├── client/
 │   ├── __init__.py
@@ -19,10 +19,12 @@ cleint-server-group-c/
 │   └── test_encryption_decryption.py
 │
 ├── docs/
-│   ├── architecture_diagram.md
 │   ├── directory_tree.md
 │   ├── documentation.md
-│   └── specifications.md
+│   ├── LICENSE.md
+│   ├── SPECIFICATIONS.md
+│   ├── system_architecture.drawio
+│   └── system_architecture.drawio.pdf
 │
 ├── utils/
 │   ├── __init__.py
