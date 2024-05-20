@@ -11,7 +11,7 @@ HOST = '127.0.0.1' # Server Host
 PORT = 5005 # Server Port
 
 # Config file for server logging
-CONFIG_PATH = './config.json'
+CONFIG_PATH = './server_app/config.json'
 with open(CONFIG_PATH, 'r', encoding="utf-8") as config_file:
     config = json.load(config_file)
 
