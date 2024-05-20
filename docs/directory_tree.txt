@@ -1,0 +1,33 @@
+client-server-group-c/
+├── client_app/
+│   ├── __init__.py
+│   ├── app.py
+│   ├── encryption.py
+│   ├── networking.py
+│   ├── serialization.py
+│   ├── key/ (contains encryption_key.key)
+│   ├── tests/ 
+│       ├── test_app.py
+│       ├── test_encryption.py
+│       ├── test_networking.py
+│       ├── test_serialization.py
+├── server_app/
+│   ├── __init__.py
+│   ├── server.py
+│   ├── decryption.py
+│   ├── deserialization.py
+│   ├── config.json
+│   ├── key/ (contains encryption_key.key)
+│   ├── tests/ 
+│       ├── test_decryption.py
+│       ├── test_deserialization.py
+│       ├── test_server.py
+├── docs/
+│   ├── CSCK541_GroupC_SysArch.drawio
+│   ├── directory_tree.txt
+│   ├── LICENSE.txt
+│   ├── SPECIFICATIONS.md
+│   ├── tech_stack.md
+├── main.py
+├── README.md
+├── requirements.txt
