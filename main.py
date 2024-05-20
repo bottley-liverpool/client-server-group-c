@@ -1,3 +1,0 @@
-"""
-The main project module
-"""
