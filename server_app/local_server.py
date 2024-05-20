@@ -93,7 +93,8 @@ def handle_client(client_socket):
             dictionary = handle_dictionary(data, serialization_format)
             log_message(f"Received dictionary: {dictionary}")
         elif command == "text_file":
-            is_encrypted = client_socket.recv(1024).strip().decode() == "True"
+            is_encrypted_str = client_socket.recv(1024).strip().decode()
+            is_encrypted = is_encrypted_str == "True"
             log_message(f"Is encrypted: {is_encrypted}")
 
             data = b''

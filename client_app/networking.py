@@ -2,6 +2,7 @@
 Networking module to send commands, dictionaries & text files
 """
 import socket
+import time
 from client_app.serialization import serialize
 from client_app.encryption import encrypt
 
@@ -9,16 +10,27 @@ from client_app.encryption import encrypt
 HOST = '127.0.0.1'
 PORT = 5005
 
-def connect_server():
+def connect_server(retries=5, delay=2):
     """
-    Connects to the server
+    Connects to the server with retries.
+
+    Args:
+        retries (int): Number of retry attempts.
+        delay (int): Delay between retries in seconds.
 
     Returns:
         client_socket (socket.socket): The socket connected to the server.
     """
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect((HOST, PORT))
-    return client_socket
+    for attempt in range(retries):
+        try:
+            client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            client_socket.connect((HOST, PORT))
+            return client_socket
+        except ConnectionRefusedError:
+            if attempt < retries - 1:
+                time.sleep(delay)
+            else:
+                raise
 
 def send_command(client_socket, command):
     """
