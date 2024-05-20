@@ -17,7 +17,7 @@ def decrypt(data):
     Returns:
         str: The decrypted plaintext data.
     """
-    key = load_key('./key/encryption_key.key')
+    key = load_key('./server_app/key/encryption_key.key')
     cipher_suite = Fernet(key)
     decrypted_data = cipher_suite.decrypt(data)
     return decrypted_data.decode()  # Convert bytes back to string
